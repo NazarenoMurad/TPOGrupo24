@@ -24,39 +24,9 @@ public class DFS {
 	}
 		
 		
-		
-	/*	int cantVertGrafo=contarVertices(grafo.Vertices());
-		int cantVertVisitados=contarVertices(visitados);
-		if(cantVertGrafo>cantVertVisitados) {
-		forest(grafo,visitados);
-		}*/
 	}
 	
-	/*public void forest(GrafoTDA grafo,ConjuntoTDA visitados) {
-		ConjuntoTDA verticesGrafo=new ConjuntoEstatico();
-		verticesGrafo.InicializarConjunto();
-		verticesGrafo=grafo.Vertices();
-		
-		int cantVertGrafo=contarVertices(verticesGrafo);
-		int cantVertVisitados=contarVertices(visitados);
-		if(cantVertGrafo>cantVertVisitados) {
-		
-			int x=verticesGrafo.Elegir();
-			while(visitados.Pertenece(x)) {
-				
-				 x=verticesGrafo.Elegir();
-				 verticesGrafo.Sacar(x);
-				 
-			}
-			
-			if(visitados.Pertenece(x)) {
-				dfs(grafo,x,visitados);
-				
-			}
-			
-		}
-	}
-	*/
+	
 	public void forest(GrafoTDA grafo,ConjuntoTDA visitados) {
 		ConjuntoTDA verticesGrafo=new ConjuntoEstatico();
 		verticesGrafo.InicializarConjunto();
@@ -75,19 +45,7 @@ public class DFS {
 	}
 	
 
-	/*private int contarVertices(ConjuntoTDA conjunto) {
-		ConjuntoTDA auxiliar=new ConjuntoEstatico();
-		auxiliar.InicializarConjunto();
-		auxiliar=conjunto;
-		int contador=0;
-		while(!auxiliar.ConjuntoVacio()) {
-			int x=auxiliar.Elegir();
-			auxiliar.Sacar(x);
-			contador=contador+1;
-		}
-		return contador;
-	}
-*/
+
 	public ConjuntoTDA Adyacentes(GrafoTDA grafo, int nodoAct) {
 	     ConjuntoTDA vertices = new ConjuntoEstatico(); 
 	     vertices.InicializarConjunto();
