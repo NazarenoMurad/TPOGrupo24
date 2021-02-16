@@ -1,1 +1,5 @@
 # TPOGrupo24
+Programacion 3 
+Autores:
+Nazareno Murad (nmurad@uade.edu.ar)
+Timoteo Güerini (tguerini@uade.edu.ar)
