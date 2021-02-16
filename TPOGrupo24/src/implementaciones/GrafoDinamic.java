@@ -52,7 +52,7 @@ public class GrafoDinamic implements GrafosTDA {
 	}
 
 	
-	public int[] vertices() {
+	public ConjuntoTDA vertices() {
 		
 		return null;
 	}

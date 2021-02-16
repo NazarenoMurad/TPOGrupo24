@@ -59,14 +59,13 @@ public class ImplemEstatica implements GrafosTDA {
 		}
 	}
 	
-	public int[] vertices() {
-		int[] aux = new int[indice];
-		for(int i = 0; i < indice; i++) {
-			aux[i] = etiquetas[i];
-			System.out.print(aux[i] + "\t");
+	public ConjuntoTDA vertices() {
+		ConjuntoTDA Vert =new ConjuntoEstatico();
+		Vert . InicializarConjunto();
+		for ( int i =0; i< indice; i++) {
+		Vert . Agregar(etiquetas[i]);
 		}
-		System.out.println();
-		return aux;
+		return Vert ;
 	}
 	
 	

@@ -7,7 +7,7 @@ public void inicializarGrafo(int dim);
 	
 	public void agregarVertice(int v) ;
 		
-	public int [] vertices();
+	public ConjuntoTDA  vertices();
 	
 	public void agregarArista(int v1, int v2, int peso);
 	
