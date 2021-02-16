@@ -32,8 +32,8 @@ public class PruebaDFS {
 		grafo.AgregarArista(3, 4, 1);
 		grafo.AgregarArista(5, 4, 1);
 		
-		
-		
+		System.out.println("DFS");
+		System.out.println("Los nodos del grafo son:");
 		DFS alg=new DFS();
 		alg.dfs(grafo, 0, visitados);
 		
