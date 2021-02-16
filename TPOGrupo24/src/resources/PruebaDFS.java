@@ -20,6 +20,10 @@ public class PruebaDFS {
 		grafo.AgregarVertice(3);
 		grafo.AgregarVertice(4);
 		grafo.AgregarVertice(5);
+		grafo.AgregarVertice(6);
+		grafo.AgregarVertice(7);
+		grafo.AgregarVertice(8);
+		grafo.AgregarVertice(9);
 		
 		grafo.AgregarArista(0, 1, 1);
 		grafo.AgregarArista(0, 2, 1);
@@ -32,20 +36,17 @@ public class PruebaDFS {
 		grafo.AgregarArista(3, 4, 1);
 		grafo.AgregarArista(5, 4, 1);
 		
+		
+		grafo.AgregarArista(6, 7, 1);
+
+		grafo.AgregarArista(9,8, 1);
+		
 		System.out.println("DFS");
 		System.out.println("Los nodos del grafo son:");
 		DFS alg=new DFS();
 		alg.dfs(grafo, 0, visitados);
 		
-		/*ConjuntoTDA ady=new ConjuntoEstatico();
-		ady.InicializarConjunto();
-		ady=alg.Adyacentes(grafo, 0);
-		while(!ady.ConjuntoVacio()) {
-			int a=ady.Elegir();
-			System.out.println(a);
-			ady.Sacar(a);
-			
-		}*/
+		
 	}
 
 }
