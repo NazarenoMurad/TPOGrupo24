@@ -28,4 +28,6 @@ public void inicializarGrafo(int dim);
 	public void imparAristas();
 	
 	public int[] dephtFirstSearch();
+	
+	
 }

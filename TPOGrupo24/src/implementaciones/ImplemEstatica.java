@@ -79,12 +79,20 @@ public class ImplemEstatica implements GrafosTDA {
 		}
 	}
 	
-
+	private int posVertice( int v){ //busca la posición del vértice en la fila.
+		int i= indice -1; //empieza desde la ultima posicion
+		while(i >=0 && etiquetas[i]!= v)
+		i--;  //decrementa el valor de i, si no se encuentra el vértice
+		return i;
+		}
 
 
 	public boolean existeArista(int v1, int v2) {
-
-		return false;
+		int o = posVertice(v1); //busco la posicion de cada vertice
+		int d = posVertice(v2);
+		return matrizAdy [o][d ]!=0;  // si en esa posición de la matriz, hay un valor distinto a 0, 
+		                              //entonces quiere 
+		                             //decir que se conectan
 	}
 
 	@Override
