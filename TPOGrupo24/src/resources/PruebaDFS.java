@@ -5,8 +5,7 @@ import implementaciones.ConjuntoEstatico;
 import implementaciones.ConjuntoTDA;
 import implementaciones.GrafoEstatico;
 import implementaciones.GrafoTDA;
-import implementaciones.GrafosTDA;
-import implementaciones.ImplemEstatica;
+
 
 public class PruebaDFS {
 
@@ -21,6 +20,7 @@ public class PruebaDFS {
 		grafo.AgregarVertice(3);
 		grafo.AgregarVertice(4);
 		grafo.AgregarVertice(5);
+		
 		grafo.AgregarArista(0, 1, 1);
 		grafo.AgregarArista(0, 2, 1);
 		grafo.AgregarArista(0, 3, 1);
@@ -31,6 +31,7 @@ public class PruebaDFS {
 		grafo.AgregarArista(2, 4, 1);
 		grafo.AgregarArista(3, 4, 1);
 		grafo.AgregarArista(5, 4, 1);
+		
 		
 		
 		DFS alg=new DFS();
