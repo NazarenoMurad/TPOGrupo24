@@ -1,37 +1,43 @@
 package algoritmos;
 
+import implementaciones.ColaTDA;
 import implementaciones.ConjuntoEstatico;
 import implementaciones.ConjuntoTDA;
 import implementaciones.GrafoTDA;
 
 public class BFS {
 
-public void  bfs (GrafoTDA grafo, int nodoAct, ConjuntoTDA visitados ) {
-		
-		if(!visitados.Pertenece(nodoAct)) {
+public void  bfs (GrafoTDA grafo, int nodoAct, ConjuntoTDA visitados, ColaTDA cola ) {
+		cola.Acolar(nodoAct);
 		visitados.Agregar(nodoAct);
-		System.out.println(nodoAct);
+		while(!cola.ColaVacia()) {
+			int v=cola.Primero();
+			System.out.println(v);
+			cola.Desacolar();
+			ConjuntoTDA adyacentes=Adyacentes(grafo,v);
+			while(!adyacentes.ConjuntoVacio()) {
+				int n=adyacentes.Elegir();
+				adyacentes.Sacar(n);
+				if(!visitados.Pertenece(n)) {
+				visitados.Agregar(n);
+				cola.Acolar(n);
+				}
+				
+			}
 		}
-		
-		ConjuntoTDA adyacentes=Adyacentes(grafo,nodoAct); //voy a buscar los adyacentes del nodoAct
-		guardarHijos(adyacentes,visitados);
-		int x=adyacentes.Elegir();
-		adyacentes.Sacar(x);
-		bfs(grafo,x,visitados);
-	
 		
 	}
 
-public void guardarHijos(ConjuntoTDA adyacentes, ConjuntoTDA visitados) {
+public void guardarHijos(GrafoTDA grafo,ConjuntoTDA adyacentes, ConjuntoTDA visitados) {
 	ConjuntoTDA auxiliar=adyacentes;
 	while(!auxiliar.ConjuntoVacio()) {
 		int n=auxiliar.Elegir();
 		visitados.Agregar(n);
 		System.out.println(n);
 		auxiliar.Sacar(n);
-		
 	}
 }
+
 public ConjuntoTDA Adyacentes(GrafoTDA grafo, int nodoAct) {
     ConjuntoTDA vertices = new ConjuntoEstatico(); 
     vertices.InicializarConjunto();

@@ -2,6 +2,8 @@ package resources;
 
 import algoritmos.BFS;
 import algoritmos.DFS;
+import implementaciones.ColaEstatica;
+import implementaciones.ColaTDA;
 import implementaciones.ConjuntoEstatico;
 import implementaciones.ConjuntoTDA;
 import implementaciones.GrafoEstatico;
@@ -35,7 +37,14 @@ public class PruebaBFS {
 		System.out.println("BFS");
 		System.out.println("Los nodos del grafo son:");
 		BFS alg=new BFS();
-		alg.bfs(grafo, 0, visitados);
+		ColaTDA cola=new ColaEstatica();
+		cola.InicializarCola();
+		alg.bfs(grafo, 0, visitados,cola);
+		/*while(!visitados.ConjuntoVacio()) {
+			int a=visitados.Elegir();
+			visitados.Sacar(a);
+			System.out.println(a);
+		}*/
 
 	}
 
