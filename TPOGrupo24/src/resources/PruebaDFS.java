@@ -36,8 +36,8 @@ public class PruebaDFS {
 		grafo.AgregarArista(5, 2, 1);
 		
 		grafo.AgregarArista(6, 7, 1);
-
-		grafo.AgregarArista(9,8, 1);
+		grafo.AgregarArista(7, 9, 1);
+		grafo.AgregarArista(6,8, 1);
 		
 		System.out.println("DFS");
 		System.out.println("Los nodos del grafo son:");

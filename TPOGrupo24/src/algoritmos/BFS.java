@@ -26,15 +26,24 @@ public void  bfs (GrafoTDA grafo, int nodoAct, ConjuntoTDA visitados, ColaTDA co
 			}
 		}
 		
+		forest(grafo,visitados,cola);
+		
 	}
 
-public void guardarHijos(GrafoTDA grafo,ConjuntoTDA adyacentes, ConjuntoTDA visitados) {
-	ConjuntoTDA auxiliar=adyacentes;
-	while(!auxiliar.ConjuntoVacio()) {
-		int n=auxiliar.Elegir();
-		visitados.Agregar(n);
-		System.out.println(n);
-		auxiliar.Sacar(n);
+public void forest(GrafoTDA grafo,ConjuntoTDA visitados,ColaTDA cola) {
+	ConjuntoTDA verticesGrafo=new ConjuntoEstatico();
+	verticesGrafo.InicializarConjunto();
+	verticesGrafo=grafo.Vertices();
+	
+	
+	while(!verticesGrafo.ConjuntoVacio()) {
+		
+		int x=verticesGrafo.Elegir();
+		verticesGrafo.Sacar(x);
+	if(!visitados.Pertenece(x)) {
+		bfs(grafo,x,visitados,cola);
+	}
+	
 	}
 }
 

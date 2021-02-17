@@ -22,15 +22,25 @@ public class PruebaBFS {
 		grafo.AgregarVertice(3);
 		grafo.AgregarVertice(4);
 		grafo.AgregarVertice(5);
-	
+		grafo.AgregarVertice(6);
+		grafo.AgregarVertice(7);
+		
+		grafo.AgregarVertice(8);
+		grafo.AgregarVertice(9);
+		grafo.AgregarVertice(10);
+		grafo.AgregarVertice(11);
 		
 		grafo.AgregarArista(0, 1, 1);
 		grafo.AgregarArista(0, 2, 1);
 		grafo.AgregarArista(1, 5, 1);
 		grafo.AgregarArista(2, 3, 1);
 		grafo.AgregarArista(3, 4, 1);
+		grafo.AgregarArista(4, 7, 1);
+		grafo.AgregarArista(5, 6, 1);
 		
-		
+		grafo.AgregarArista(8, 9, 1);
+		grafo.AgregarArista(8, 10, 1);
+		grafo.AgregarArista(10, 11, 1);
 		
 		
 		
@@ -40,11 +50,7 @@ public class PruebaBFS {
 		ColaTDA cola=new ColaEstatica();
 		cola.InicializarCola();
 		alg.bfs(grafo, 0, visitados,cola);
-		/*while(!visitados.ConjuntoVacio()) {
-			int a=visitados.Elegir();
-			visitados.Sacar(a);
-			System.out.println(a);
-		}*/
+		
 
 	}
 
