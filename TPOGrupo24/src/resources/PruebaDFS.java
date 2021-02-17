@@ -34,7 +34,7 @@ public class PruebaDFS {
 		grafo.AgregarArista(2, 3, 1);
 		grafo.AgregarArista(2, 4, 1);
 		grafo.AgregarArista(3, 4, 1);
-		grafo.AgregarArista(5, 4, 1);
+		grafo.AgregarArista(4, 5, 1);
 		
 		
 		grafo.AgregarArista(6, 7, 1);
