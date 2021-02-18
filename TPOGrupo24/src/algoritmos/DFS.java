@@ -20,7 +20,7 @@ public class DFS {
 				dfs(grafo,n,visitados);
 			}
 		}
-		forest(grafo,visitados);
+		
 	}
 		
 		

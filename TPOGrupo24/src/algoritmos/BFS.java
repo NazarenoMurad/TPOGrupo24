@@ -26,7 +26,7 @@ public void  bfs (GrafoTDA grafo, int nodoAct, ConjuntoTDA visitados, ColaTDA co
 			}
 		}
 		
-		forest(grafo,visitados,cola);
+		
 		
 	}
 

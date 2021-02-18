@@ -23,27 +23,25 @@ public class PruebaDFS {
 		grafo.AgregarVertice(6);
 		grafo.AgregarVertice(7);
 		grafo.AgregarVertice(8);
-		grafo.AgregarVertice(9);
+		
 		
 		grafo.AgregarArista(0, 1, 1);
 		grafo.AgregarArista(0, 2, 1);
-		grafo.AgregarArista(0, 3, 1);
-		grafo.AgregarArista(0, 4, 1);
 		grafo.AgregarArista(1, 5, 1);
 		grafo.AgregarArista(2, 3, 1);
 		grafo.AgregarArista(3, 4, 1);
 		grafo.AgregarArista(4, 5, 1);
-		grafo.AgregarArista(5, 2, 1);
+		grafo.AgregarArista(5, 6, 1);
 		
-		grafo.AgregarArista(6, 7, 1);
-		grafo.AgregarArista(7, 9, 1);
-		grafo.AgregarArista(6,8, 1);
+	
+		grafo.AgregarArista(7,8, 1);
 		
 		System.out.println("DFS");
 		System.out.println("Los nodos del grafo son:");
 		DFS alg=new DFS();
-		alg.dfs(grafo, 0, visitados);
-		
+		alg.dfs(grafo, 0, visitados); //llamo a dfs
+		System.out.println("Vértices aislados:");
+		alg.forest(grafo, visitados); // llamo a forest por si faltaron recorrer vértices
 		
 		
 	}
