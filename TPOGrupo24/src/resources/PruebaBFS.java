@@ -46,9 +46,9 @@ public class PruebaBFS {
 		BFS alg=new BFS();
 		ColaTDA cola=new ColaEstatica();
 		cola.InicializarCola();
-		alg.bfs(grafo, 0, visitados,cola);
+		alg.bfs(grafo, 0, visitados,cola); //llamo a bfs
 		System.out.println("Forest:");
-		alg.forest(grafo, visitados, cola);
+		alg.forest(grafo, visitados, cola); //llamo a forest por si faltaron recorrer nodos
 
 	}
 
