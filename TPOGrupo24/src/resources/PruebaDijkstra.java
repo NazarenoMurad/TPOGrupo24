@@ -1,6 +1,7 @@
 package resources;
 
 import algoritmos.Dijkstra;
+import implementaciones.ConjuntoTDA;
 import implementaciones.GrafoEstatico;
 import implementaciones.GrafoTDA;
 
@@ -10,6 +11,7 @@ public class PruebaDijkstra {
 		// TODO Auto-generated method stub
 		GrafoTDA grafo = new GrafoEstatico();
 		grafo.InicializarGrafo();
+		
 		grafo.AgregarVertice(1);
 		grafo.AgregarVertice(2);
 		grafo.AgregarVertice(3);
@@ -29,7 +31,13 @@ public class PruebaDijkstra {
 		grafo.AgregarArista(6, 4, 1);
 		
 		Dijkstra d = new Dijkstra();
-		d.dijkstra(grafo, 1);
+		GrafoTDA dijkstra = d.dijkstra(grafo, 1);
+		ConjuntoTDA verticesDijkstra = dijkstra.Vertices();
+		while(!verticesDijkstra.ConjuntoVacio()){
+			int elem = verticesDijkstra.Elegir();
+			System.out.println("V:"+1+" --"+dijkstra.PesoArista(1, elem)+"--> V:"+elem);
+			verticesDijkstra.Sacar(elem);
+		}
 	}
 
 }

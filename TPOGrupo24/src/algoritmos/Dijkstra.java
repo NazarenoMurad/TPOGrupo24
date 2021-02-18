@@ -9,10 +9,10 @@ public class Dijkstra {
 	public GrafoTDA dijkstra(GrafoTDA grafo, int vertice) { //grafo_parametro y vertice_parametro
 		ConjuntoTDA visitados = new ConjuntoEstatico();
 		visitados.InicializarConjunto(); //creo un conjunto para los grafos visitados
+		visitados.Agregar(vertice);
 		
-		ConjuntoTDA verticesGrafo=new ConjuntoEstatico(); //creo un conjunto para los vertices del grafo
-		verticesGrafo.InicializarConjunto();
-		verticesGrafo=grafo.Vertices();
+		ConjuntoTDA verticesGrafo=grafo.Vertices();; //creo un conjunto para los vertices del grafo
+		
 		
 		GrafoTDA grafoAux = new GrafoEstatico(); //creo un grafo auxiliar
 		grafoAux.InicializarGrafo();
@@ -33,17 +33,20 @@ public class Dijkstra {
 			ady.Sacar(v);//saco de adyacentes para que el while itere
 		}
 		
-		ConjuntoTDA pendientes = grafo.Vertices();
+		verticesGrafo=grafo.Vertices();
+		verticesGrafo.Sacar(vertice);
+		ConjuntoTDA pendientes = verticesGrafo;
 		
 		//comienzo a llenar el grafo auxiliar con las aristas que correspondan a dijkstra
 		while(!pendientes.ConjuntoVacio()) {
 			//busco el nodo con la arista de menor peso conectada al vertice_parametro usando adyacentes
-			
 			int menor = grafoAux.Vertices().Elegir(); //elijo un vertice aleatorio adyacente a vertice_parametro
 			ConjuntoTDA pendientesWhile = pendientes;
 			while(!pendientesWhile.ConjuntoVacio()) {
 				int x = pendientesWhile.Elegir();
-				if(grafoAux.PesoArista(vertice, x) < grafoAux.PesoArista(vertice, menor)) menor = x; //lo guardo si es menor
+				if(grafoAux.PesoArista(vertice, x) < grafoAux.PesoArista(vertice, menor)) {
+					menor = x; //lo guardo si es menor
+				}
 				pendientesWhile.Sacar(x);
 			}
 			/* Verifico si hay un camino mejor del vertice_parametro a p pasando por el menor */
@@ -68,6 +71,7 @@ public class Dijkstra {
 		return grafoAux;
 	}
 	
+
 	public ConjuntoTDA Adyacentes(GrafoTDA grafo, int nodoAct) {
 	     ConjuntoTDA vertices = new ConjuntoEstatico(); 
 	     vertices.InicializarConjunto();
