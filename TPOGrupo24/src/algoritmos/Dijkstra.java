@@ -17,14 +17,15 @@ public class Dijkstra {
 		GrafoTDA grafoAux = new GrafoEstatico(); //creo un grafo auxiliar
 		grafoAux.InicializarGrafo();
 		
-		while(!verticesGrafo.ConjuntoVacio()) {
+		while(!verticesGrafo.ConjuntoVacio()) { //lleno el grafo auxiliar solamente con los vertices del grafo parametro
 			int v = verticesGrafo.Elegir();
 			grafoAux.AgregarVertice(v);
 			verticesGrafo.Sacar(v);
 		}
 		
-		ConjuntoTDA ady = Adyacentes(grafo, vertice);
+		ConjuntoTDA ady = Adyacentes(grafo, vertice); //adyacentes a vertice parametro
 		
+		//agrego las aristas entre el vertice parametro y sus adyacentes
 		while(ady.ConjuntoVacio()) {
 			int v = ady.Elegir();
 			int peso = grafo.PesoArista(vertice, v); //obtengo peso de esa arista entre vertice parametro y v
@@ -34,9 +35,10 @@ public class Dijkstra {
 		
 		ConjuntoTDA pendientes = grafo.Vertices();
 		
+		//comienzo a llenar el grafo auxiliar con las aristas que correspondan a dijkstra
 		while(!pendientes.ConjuntoVacio()) {
 			//busco el nodo con la arista de menor peso conectada al vertice parametro usando adyacentes
-			ady = Adyacentes(grafo, vertice);
+			ady = Adyacentes(grafo, vertice); //lleno el grafo adyacentes
 			int menor = grafo.PesoArista(vertice, pendientes.Elegir()); //elijo un adyacente aleatorio
 			ConjuntoTDA pendientesWhile = pendientes;
 			while(!ady.ConjuntoVacio()) {
