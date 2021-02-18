@@ -37,7 +37,7 @@ public class PruebaBFS {
 		grafo.AgregarArista(4, 7, 1);
 		grafo.AgregarArista(5, 6, 1);
 		
-		grafo.AgregarArista(8, 9, 1);
+		grafo.AgregarArista(9, 8, 1);
 		
 		
 		
@@ -47,7 +47,7 @@ public class PruebaBFS {
 		ColaTDA cola=new ColaEstatica();
 		cola.InicializarCola();
 		alg.bfs(grafo, 0, visitados,cola);
-		System.out.println("vértices aislados:");
+		System.out.println("Forest:");
 		alg.forest(grafo, visitados, cola);
 
 	}

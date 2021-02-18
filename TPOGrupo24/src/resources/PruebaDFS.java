@@ -34,13 +34,13 @@ public class PruebaDFS {
 		grafo.AgregarArista(5, 6, 1);
 		
 	
-		grafo.AgregarArista(7,8, 1);
+		grafo.AgregarArista(8,7, 1);
 		
 		System.out.println("DFS");
 		System.out.println("Los nodos del grafo son:");
 		DFS alg=new DFS();
 		alg.dfs(grafo, 0, visitados); //llamo a dfs
-		System.out.println("Vértices aislados:");
+		System.out.println("Forest:");
 		alg.forest(grafo, visitados); // llamo a forest por si faltaron recorrer vértices
 		
 		
