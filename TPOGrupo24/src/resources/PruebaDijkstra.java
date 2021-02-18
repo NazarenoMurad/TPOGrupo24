@@ -1,6 +1,7 @@
 package resources;
 
 import algoritmos.Dijkstra;
+import implementaciones.ConjuntoEstatico;
 import implementaciones.ConjuntoTDA;
 import implementaciones.GrafoEstatico;
 import implementaciones.GrafoTDA;
@@ -31,13 +32,35 @@ public class PruebaDijkstra {
 		grafo.AgregarArista(6, 4, 1);
 		
 		Dijkstra d = new Dijkstra();
-		GrafoTDA dijkstra = d.dijkstra(grafo, 1);
-		ConjuntoTDA verticesDijkstra = dijkstra.Vertices();
-		while(!verticesDijkstra.ConjuntoVacio()){
-			int elem = verticesDijkstra.Elegir();
-			System.out.println("V:"+1+" --"+dijkstra.PesoArista(1, elem)+"--> V:"+elem);
-			verticesDijkstra.Sacar(elem);
+		GrafoTDA graph = new GrafoEstatico();
+		graph.InicializarGrafo();
+		graph = d.dijkstra(grafo, 1);
+		ConjuntoTDA vertices = new ConjuntoEstatico();
+		vertices.InicializarConjunto();
+		copiarConjuntos(graph.Vertices(), vertices);
+		
+		while(!vertices.ConjuntoVacio()) {
+			int elem = vertices.Elegir();
+			System.out.println("V:1 -----"+graph.PesoArista(1, elem)+"-----> "+elem);
+			vertices.Sacar(elem);
 		}
 	}
 
+	public static void copiarConjuntos(ConjuntoTDA a, ConjuntoTDA b) {
+		ConjuntoTDA auxA = new ConjuntoEstatico();
+		auxA.InicializarConjunto();
+		
+		while(!a.ConjuntoVacio()) {
+			int elem = a.Elegir();
+			auxA.Agregar(elem);
+			a.Sacar(elem);
+		}
+		
+		while(!auxA.ConjuntoVacio()){
+			int elem = auxA.Elegir();
+			a.Agregar(elem);
+			b.Agregar(elem);
+			auxA.Sacar(elem);
+		}
+	}
 }
